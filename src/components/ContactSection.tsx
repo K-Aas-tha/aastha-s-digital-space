@@ -48,40 +48,56 @@ const ContactSection = () => {
           </p>
         </div>
         
-        <div className="max-w-2xl mx-auto">
-          <div className="glass-card rounded-2xl p-8">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Left - My Details */}
+          <div className="glass-card rounded-2xl p-8 flex flex-col justify-center">
+            <h3 className="text-2xl font-bold font-display mb-6">Get in Touch</h3>
+            <p className="text-muted-foreground mb-8">
+              Feel free to reach out for collaborations, opportunities, or just a friendly chat about AI/ML and tech!
+            </p>
+            
             {/* Email */}
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                 <Mail className="text-primary" size={22} />
               </div>
-              <a 
-                href="mailto:aastha.nayak@email.com"
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                aastha.nayak@email.com
-              </a>
+              <div>
+                <p className="text-sm text-muted-foreground mb-1">Email</p>
+                <a 
+                  href="mailto:aastha.nayak@email.com"
+                  className="text-foreground hover:text-primary transition-colors font-medium"
+                >
+                  aastha.nayak@email.com
+                </a>
+              </div>
             </div>
             
-            {/* Contact Form */}
+            {/* Social Links */}
+            <div>
+              <p className="text-sm text-muted-foreground mb-4">Find me on</p>
+              <SocialLinks />
+            </div>
+          </div>
+          
+          {/* Right - Contact Form */}
+          <div className="glass-card rounded-2xl p-8">
+            <h3 className="text-2xl font-bold font-display mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid md:grid-cols-2 gap-5">
-                <Input
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="bg-secondary border-border focus:border-primary"
-                  maxLength={100}
-                />
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="bg-secondary border-border focus:border-primary"
-                  maxLength={255}
-                />
-              </div>
+              <Input
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="bg-secondary border-border focus:border-primary"
+                maxLength={100}
+              />
+              <Input
+                type="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="bg-secondary border-border focus:border-primary"
+                maxLength={255}
+              />
               <Textarea
                 placeholder="Your Message"
                 value={formData.message}
@@ -96,14 +112,6 @@ const ContactSection = () => {
                 Send Message
               </Button>
             </form>
-            
-            {/* Social Links */}
-            <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-center text-muted-foreground mb-4 text-sm">Or find me on</p>
-              <div className="flex justify-center">
-                <SocialLinks />
-              </div>
-            </div>
           </div>
         </div>
       </div>
