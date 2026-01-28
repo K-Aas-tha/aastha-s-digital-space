@@ -27,7 +27,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="font-display font-bold text-xl text-foreground hover:text-primary transition-colors">
-          Aastha<span className="text-primary">.</span>
+          Aastha<span className="text-primary">.Portfolio</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
