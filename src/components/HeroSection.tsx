@@ -1,3 +1,4 @@
+import { Download } from 'lucide-react';
 import SocialLinks from './SocialLinks';
 
 const HeroSection = () => {
@@ -12,12 +13,20 @@ const HeroSection = () => {
           Hello, I'm
         </p>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display mb-6 animate-fade-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-          Aastha<span className="text-gradient">_</span>Nayak
+          Aastha <span className="text-gradient">Nayak</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
           AI/ML Enthusiast | Python Programmer
         </p>
-        <div className="flex justify-center animate-fade-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+          <a 
+            href="/resume.pdf" 
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+          >
+            <Download size={18} />
+            Download Resume
+          </a>
           <SocialLinks />
         </div>
         
